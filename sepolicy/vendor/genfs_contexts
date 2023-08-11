@@ -3,6 +3,9 @@ genfscon proc /driver/dualcam_cali    u:object_r:vendor_proc_camera:s0
 genfscon proc /driver/ois_af_state    u:object_r:vendor_proc_camera:s0
 genfscon proc /driver/ois_i2c_rw      u:object_r:vendor_proc_camera:s0
 
+# Charging
+genfscon sysfs /class/asuslib/charging_suspend  u:object_r:vendor_sysfs_battery_supply:s0
+
 # Display
 genfscon sysfs /devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_glove_mode          u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_high_report_rate    u:object_r:vendor_sysfs_graphics:s0
@@ -16,6 +19,9 @@ genfscon sysfs /class/asuslib/slow_charging_enable  u:object_r:vendor_sysfs_batt
 
 # Fingerprint
 genfscon proc /driver/fp_xy    u:object_r:vendor_proc_fingerprint:s0
+
+# Livedisplay
+genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/hbm   u:object_r:sysfs_hbm:s0
 
 # Performance
 genfscon sysfs /devices/platform/soc/1d84000.ufshc/clkgate_enable    u:object_r:vendor_sysfs_msm_perf:s0
